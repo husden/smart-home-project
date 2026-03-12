@@ -19,3 +19,30 @@ file(GLOB_RECURSE SOURCES
 )
 
 add_executable(smarthome ${SOURCES})
+
+option(BUILD_TESTS "Build tests" ON)
+
+if(BUILD_TESTS)
+    enable_testing()
+
+    find_package(GTest REQUIRED)
+    include_directories(${GTEST_INCLUDE_DIRS})
+
+    function(add_project_test TEST_NAME TEST_FILES)
+        add_executable(${TEST_NAME} ${TEST_FILES})
+        target_link_libraries(${TEST_NAME} ${GTEST_LIBRARIES} pthread)
+        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+    endfunction()
+
+    file(GLOB_RECURSE TEST_SOURCES
+            ${PROJECT_PATH}/tests/*.cpp
+    )
+
+    foreach(TEST_FILE ${TEST_SOURCES})
+        get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+        add_project_test(${TEST_NAME} ${TEST_FILE})
+        message(STATUS "✅ Test added: ${TEST_NAME}")
+    endforeach()
+
+    message(STATUS "🎯 Total test files: ${TEST_SOURCES}")
+endif()
