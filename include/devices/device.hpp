@@ -2,7 +2,7 @@
 #define SMART_HOME_PROJECT_DEVICE_HPP
 
 #include <string>
-#include "../exceptions/exceptions.hpp"
+#include "exceptions/exceptions.hpp"
 
 class Device {
 public:
