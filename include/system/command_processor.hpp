@@ -28,7 +28,6 @@ private:
     CommandResult handleList(const std::vector<std::string>& args);
     CommandResult handleHelp(const std::vector<std::string>& args);
     CommandResult handleExit(const std::vector<std::string>& args);
-
 public:
     explicit CommandProcessor(SmartHomeSystem& sys);
 
