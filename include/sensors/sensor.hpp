@@ -17,6 +17,11 @@ public:
     virtual std::string getName() const = 0;
 
     bool isOperational() const { return isOperational_; }
+
+    double getValue() const {
+        return 0.0;
+    }
+
 protected:
     explicit Sensor(std::string name)
     : name_(std::move(name)), isOperational_(true) {

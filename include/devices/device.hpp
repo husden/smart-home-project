@@ -14,6 +14,8 @@ public:
     virtual std::string getType() const = 0;
 
     bool isOn() const { return isOn_; }
+    bool isActive() const { return isOn_; }
+
     static constexpr int MIN_BRIGHTNESS = 0;
     static constexpr int MAX_BRIGHTNESS = 100;
     static constexpr double MIN_TEMPERATURE = 5.0;

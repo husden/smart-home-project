@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(PROJECT_PATH "/Users/tyagunova_daria/CLionProjects/smart-home-project")
 
-# Все папки с заголовочными файлами
 include_directories(
         ${PROJECT_PATH}/include
         ${PROJECT_PATH}/include/devices
