@@ -1,0 +1,8 @@
+//
+// Created by Sasha Doubik-Enman on 3/12/26.
+//
+
+#ifndef SMART_HOME_PROJECT_TEST_SENSOR_HPP
+#define SMART_HOME_PROJECT_TEST_SENSOR_HPP
+
+#endif //SMART_HOME_PROJECT_TEST_SENSOR_HPP
