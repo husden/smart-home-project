@@ -2,6 +2,8 @@
 #define SMART_HOME_PROJECT_TEST_DEVICE_HPP
 
 #include <gtest/gtest.h>
+
+#include "../../cmake-build-debug/_deps/googletest-src/googletest/include/gtest/gtest.h"
 #include "devices/device.hpp"
 #include "exceptions/exceptions.hpp"
 
@@ -24,6 +26,19 @@ TEST(DeviceTest, CreateDevice) {
     EXPECT_EQ(device.getName(), "Test Light");
     EXPECT_EQ(device.getType(), "TestDevice");
     EXPECT_FALSE(device.isOn());
+}
+
+TEST (DeviceTest, TurnOff) {
+    TestDevice device("Test Light");
+
+    device.turnOn();
+    EXPECT_FALSE(device.isOn());
+    EXPECT_EQ(device.getStatus(), "TestDevice is OFF");
+
+}
+
+TEST(DeviceTest,EmptyNameThrows) {
+    EXPECT_THROW(TestDevice device(""), InvalidArgumentException);
 }
 
 #endif //SMART_HOME_PROJECT_TEST_DEVICE_HPP

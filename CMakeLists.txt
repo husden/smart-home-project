@@ -27,6 +27,9 @@ enable_testing()
 
 add_executable(run_tests
         tests/run_tests.cpp
+        include/devices/light.hpp
+        src/devices/light.cpp
+        include/devices/thermostat.hpp
 )
 
 target_link_libraries(run_tests
