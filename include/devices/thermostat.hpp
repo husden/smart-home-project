@@ -1,4 +1,3 @@
-
 #ifndef SMART_HOME_PROJECT_THERMOSTAT_HPP
 #define SMART_HOME_PROJECT_THERMOSTAT_HPP
 
@@ -12,6 +11,8 @@ public:
     void turnOff() override;
     std::string getStatus() const override;
     std::string getType() const override;
+
+    std::string getName() const override { return name_; }
 
     void setTargetTemperature(double temp);
     double getTargetTemperature() const { return targetTemperature_; }

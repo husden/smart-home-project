@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <map>
+#include "devices/device.hpp"
 
 CommandProcessor::CommandProcessor(SmartHomeSystem& sys) : system(sys) {}
 

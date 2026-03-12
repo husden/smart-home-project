@@ -1,7 +1,3 @@
-//
-// Created by Sasha Doubik-Enman on 3/12/26.
-//
-
 #ifndef SMART_HOME_PROJECT_LIGHT_HPP
 #define SMART_HOME_PROJECT_LIGHT_HPP
 
@@ -15,6 +11,8 @@ public:
     void turnOff() override;
     std::string getStatus() const override;
     std::string getType() const override;
+
+    std::string getName() const override { return name_; }
 
     void setBrightness(int level);
     int getBrightness() const { return brightness_; }

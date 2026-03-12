@@ -47,6 +47,10 @@ public:
         : SensorException("Sensor '" + sensorName + "' is broken") {}
 };
 
-
+class CommandException : public SmartHomeException {
+public:
+    explicit CommandException(const std::string& commandName)
+            : SmartHomeException("Unknown command: '" + commandName + "'") {}
+};
 
 #endif

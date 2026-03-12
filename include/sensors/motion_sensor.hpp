@@ -9,6 +9,8 @@ public:
     std::optional<double> readValue() override;
     std::string getSensorType() const override;
 
+    std::string getName() const override { return name_; }
+
     void triggerMotion();
     void clearMotion();
 

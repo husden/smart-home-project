@@ -8,7 +8,6 @@
 #include "../exceptions/exceptions.hpp"
 class Sensor {
 private:
-    std::string name_;
     bool isOperational_;
 public:
     virtual ~Sensor() = default;
@@ -23,6 +22,7 @@ public:
     }
 
 protected:
+    std::string name_;
     explicit Sensor(std::string name)
     : name_(std::move(name)), isOperational_(true) {
         if (name_.empty()) {
