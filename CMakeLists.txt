@@ -28,21 +28,37 @@ if(BUILD_TESTS)
     find_package(GTest REQUIRED)
     include_directories(${GTEST_INCLUDE_DIRS})
 
-    function(add_project_test TEST_NAME TEST_FILES)
-        add_executable(${TEST_NAME} ${TEST_FILES})
-        target_link_libraries(${TEST_NAME} ${GTEST_LIBRARIES} pthread)
-        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-    endfunction()
-
-    file(GLOB_RECURSE TEST_SOURCES
-            ${PROJECT_PATH}/tests/*.cpp
+    add_executable(test_condition_rule
+            ${PROJECT_PATH}/tests/rules/test_condition_rule.cpp
+            ${PROJECT_PATH}/src/rules/condition_rule.cpp
+            ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
     )
+    target_link_libraries(test_condition_rule ${GTEST_LIBRARIES} pthread)
+    add_test(NAME test_condition_rule COMMAND test_condition_rule)
 
-    foreach(TEST_FILE ${TEST_SOURCES})
-        get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
-        add_project_test(${TEST_NAME} ${TEST_FILE})
-        message(STATUS "✅ Test added: ${TEST_NAME}")
-    endforeach()
+    add_executable(test_scheduled_rule
+            ${PROJECT_PATH}/tests/rules/test_scheduled_rule.cpp
+            ${PROJECT_PATH}/src/rules/scheduled_rule.cpp
+    )
+    target_link_libraries(test_scheduled_rule ${GTEST_LIBRARIES} pthread)
+    add_test(NAME test_scheduled_rule COMMAND test_scheduled_rule)
 
-    message(STATUS "🎯 Total test files: ${TEST_SOURCES}")
+    add_executable(test_smart_home
+            ${PROJECT_PATH}/tests/system/test_smart_home.cpp
+            ${PROJECT_PATH}/src/system/smart_home_system.cpp
+            ${PROJECT_PATH}/src/devices/light.cpp
+            ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
+            ${PROJECT_PATH}/src/rules/condition_rule.cpp
+    )
+    target_link_libraries(test_smart_home ${GTEST_LIBRARIES} pthread)
+    add_test(NAME test_smart_home COMMAND test_smart_home)
+
+    add_executable(test_command_processor
+            ${PROJECT_PATH}/tests/system/test_command_processor.cpp
+            ${PROJECT_PATH}/src/system/command_processor.cpp
+    )
+    target_link_libraries(test_command_processor ${GTEST_LIBRARIES} pthread)
+    add_test(NAME test_command_processor COMMAND test_command_processor)
+
+    message(STATUS "🎯 Tests configured")
 endif()
