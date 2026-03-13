@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 project(SmartHome)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 
-set(PROJECT_PATH "/Users/tyagunova_daria/CLionProjects/smart-home-project")
+set(PROJECT_PATH ${CMAKE_SOURCE_DIR})
 
 include_directories(
         ${PROJECT_PATH}/include
