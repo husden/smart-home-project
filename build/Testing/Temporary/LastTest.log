@@ -1,0 +1,129 @@
+Start testing: Mar 13 19:56 MSK
+----------------------------------------------------------
+1/4 Testing: test_condition_rule
+1/4 Test: test_condition_rule
+Command: "/Users/tyagunova_daria/CLionProjects/smart-home-project/build/test_condition_rule"
+Directory: /Users/tyagunova_daria/CLionProjects/smart-home-project/build
+"test_condition_rule" start time: Mar 13 19:56 MSK
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250808-4780-aa0gxy/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from ConditionRuleTest
+[ RUN      ] ConditionRuleTest.ConditionTrueExecutesAction
+✅ Rule executed: TestRule
+[       OK ] ConditionRuleTest.ConditionTrueExecutesAction (0 ms)
+[ RUN      ] ConditionRuleTest.ConditionFalseDoesNotExecute
+[       OK ] ConditionRuleTest.ConditionFalseDoesNotExecute (0 ms)
+[----------] 2 tests from ConditionRuleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_condition_rule" end time: Mar 13 19:56 MSK
+"test_condition_rule" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: test_scheduled_rule
+2/4 Test: test_scheduled_rule
+Command: "/Users/tyagunova_daria/CLionProjects/smart-home-project/build/test_scheduled_rule"
+Directory: /Users/tyagunova_daria/CLionProjects/smart-home-project/build
+"test_scheduled_rule" start time: Mar 13 19:56 MSK
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250808-4780-aa0gxy/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from ScheduledRuleTest
+[ RUN      ] ScheduledRuleTest.ExecuteAtScheduledTime
+/Users/tyagunova_daria/CLionProjects/smart-home-project/tests/rules/test_scheduled_rule.cpp:20: Failure
+Value of: rule.checkCondition()
+  Actual: false
+Expected: true
+
+/Users/tyagunova_daria/CLionProjects/smart-home-project/tests/rules/test_scheduled_rule.cpp:23: Failure
+Value of: actionExecuted
+  Actual: false
+Expected: true
+
+[  FAILED  ] ScheduledRuleTest.ExecuteAtScheduledTime (2005 ms)
+[ RUN      ] ScheduledRuleTest.MakeTimeWorks
+[       OK ] ScheduledRuleTest.MakeTimeWorks (1 ms)
+[----------] 2 tests from ScheduledRuleTest (2007 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (2007 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ScheduledRuleTest.ExecuteAtScheduledTime
+
+ 1 FAILED TEST
+<end of output>
+Test time =   2.01 sec
+----------------------------------------------------------
+Test Failed.
+"test_scheduled_rule" end time: Mar 13 19:56 MSK
+"test_scheduled_rule" time elapsed: 00:00:02
+----------------------------------------------------------
+
+3/4 Testing: test_smart_home
+3/4 Test: test_smart_home
+Command: "/Users/tyagunova_daria/CLionProjects/smart-home-project/build/test_smart_home"
+Directory: /Users/tyagunova_daria/CLionProjects/smart-home-project/build
+"test_smart_home" start time: Mar 13 19:56 MSK
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250808-4780-aa0gxy/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SmartHomeSystemTest
+[ RUN      ] SmartHomeSystemTest.AddAndFindDevice
+➕ Adding device: TestLight
+[       OK ] SmartHomeSystemTest.AddAndFindDevice (0 ms)
+[ RUN      ] SmartHomeSystemTest.AddAndFindSensor
+➕ Adding sensor: TestSensor
+[       OK ] SmartHomeSystemTest.AddAndFindSensor (0 ms)
+[ RUN      ] SmartHomeSystemTest.AddRule
+➕ Adding rule: TestRule
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test_smart_home" end time: Mar 13 19:56 MSK
+"test_smart_home" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: test_command_processor
+4/4 Test: test_command_processor
+Command: "/Users/tyagunova_daria/CLionProjects/smart-home-project/build/test_command_processor"
+Directory: /Users/tyagunova_daria/CLionProjects/smart-home-project/build
+"test_command_processor" start time: Mar 13 19:56 MSK
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250808-4780-aa0gxy/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from CommandProcessorTest
+[ RUN      ] CommandProcessorTest.ParseArguments
+[       OK ] CommandProcessorTest.ParseArguments (0 ms)
+[ RUN      ] CommandProcessorTest.ProcessHelpCommand
+[       OK ] CommandProcessorTest.ProcessHelpCommand (0 ms)
+[----------] 2 tests from CommandProcessorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_command_processor" end time: Mar 13 19:56 MSK
+"test_command_processor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 13 19:56 MSK

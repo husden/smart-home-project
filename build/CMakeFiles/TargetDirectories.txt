@@ -1,3 +1,10 @@
 /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/smarthome.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_condition_rule.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_scheduled_rule.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_smart_home.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_command_processor.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_device.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test_sensor.dir
+/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/test.dir
 /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/edit_cache.dir
 /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles/rebuild_cache.dir

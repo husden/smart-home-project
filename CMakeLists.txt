@@ -14,10 +14,7 @@ include_directories(
         ${PROJECT_PATH}/include/exceptions
 )
 
-file(GLOB_RECURSE SOURCES
-        ${PROJECT_PATH}/src/*.cpp
-)
-
+file(GLOB_RECURSE SOURCES ${PROJECT_PATH}/src/*.cpp)
 add_executable(smarthome ${SOURCES})
 
 option(BUILD_TESTS "Build tests" ON)
@@ -25,22 +22,28 @@ option(BUILD_TESTS "Build tests" ON)
 if(BUILD_TESTS)
     enable_testing()
 
-    find_package(GTest REQUIRED)
-    include_directories(${GTEST_INCLUDE_DIRS})
+    set(GTEST_INCLUDE_DIR "/opt/homebrew/Cellar/googletest/1.17.0/include")
+    set(GTEST_LIB_DIR "/opt/homebrew/Cellar/googletest/1.17.0/lib")
+    set(GTEST_LIBRARY ${GTEST_LIB_DIR}/libgtest.a)
+    set(GTEST_MAIN_LIBRARY ${GTEST_LIB_DIR}/libgtest_main.a)
+
+    include_directories(${GTEST_INCLUDE_DIR})
+
+    message(STATUS "Using GTest from: ${GTEST_INCLUDE_DIR}")
 
     add_executable(test_condition_rule
             ${PROJECT_PATH}/tests/rules/test_condition_rule.cpp
             ${PROJECT_PATH}/src/rules/condition_rule.cpp
             ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
     )
-    target_link_libraries(test_condition_rule ${GTEST_LIBRARIES} pthread)
+    target_link_libraries(test_condition_rule ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
     add_test(NAME test_condition_rule COMMAND test_condition_rule)
 
     add_executable(test_scheduled_rule
             ${PROJECT_PATH}/tests/rules/test_scheduled_rule.cpp
             ${PROJECT_PATH}/src/rules/scheduled_rule.cpp
     )
-    target_link_libraries(test_scheduled_rule ${GTEST_LIBRARIES} pthread)
+    target_link_libraries(test_scheduled_rule ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
     add_test(NAME test_scheduled_rule COMMAND test_scheduled_rule)
 
     add_executable(test_smart_home
@@ -50,15 +53,37 @@ if(BUILD_TESTS)
             ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
             ${PROJECT_PATH}/src/rules/condition_rule.cpp
     )
-    target_link_libraries(test_smart_home ${GTEST_LIBRARIES} pthread)
+    target_link_libraries(test_smart_home ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
     add_test(NAME test_smart_home COMMAND test_smart_home)
 
     add_executable(test_command_processor
             ${PROJECT_PATH}/tests/system/test_command_processor.cpp
             ${PROJECT_PATH}/src/system/command_processor.cpp
+            ${PROJECT_PATH}/src/system/smart_home_system.cpp
+            ${PROJECT_PATH}/src/devices/light.cpp
+            ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
+            ${PROJECT_PATH}/src/rules/condition_rule.cpp
     )
-    target_link_libraries(test_command_processor ${GTEST_LIBRARIES} pthread)
+    target_link_libraries(test_command_processor ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
     add_test(NAME test_command_processor COMMAND test_command_processor)
 
-    message(STATUS "🎯 Tests configured")
+    add_executable(test_device
+            ${PROJECT_PATH}/tests/devices/test_device.cpp
+            ${PROJECT_PATH}/src/devices/light.cpp
+            ${PROJECT_PATH}/src/devices/thermostat.cpp
+            ${PROJECT_PATH}/src/devices/device.cpp
+    )
+    target_link_libraries(test_device ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
+    add_test(NAME test_device COMMAND test_device)
+
+    add_executable(test_sensor
+            ${PROJECT_PATH}/tests/sensors/test_sensor.cpp
+            ${PROJECT_PATH}/src/sensors/motion_sensor.cpp
+            ${PROJECT_PATH}/src/sensors/temperature_sensor.cpp
+    )
+
+    target_link_libraries(test_sensor ${GTEST_MAIN_LIBRARY} ${GTEST_LIBRARY} pthread)
+    add_test(NAME test_sensor COMMAND test_sensor)
+
+    message(STATUS "✅ Tests configured with hardcoded GTest paths")
 endif()

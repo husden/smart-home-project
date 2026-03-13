@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/tyagunova_daria/CLionProjects/smart-home-project/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -129,12 +139,91 @@ smarthome/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/build
 .PHONY : smarthome/fast
 
+#=============================================================================
+# Target rules for targets named test_condition_rule
+
+# Build rule for target.
+test_condition_rule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_condition_rule
+.PHONY : test_condition_rule
+
+# fast build rule for target.
+test_condition_rule/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/build
+.PHONY : test_condition_rule/fast
+
+#=============================================================================
+# Target rules for targets named test_scheduled_rule
+
+# Build rule for target.
+test_scheduled_rule: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_scheduled_rule
+.PHONY : test_scheduled_rule
+
+# fast build rule for target.
+test_scheduled_rule/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/build
+.PHONY : test_scheduled_rule/fast
+
+#=============================================================================
+# Target rules for targets named test_smart_home
+
+# Build rule for target.
+test_smart_home: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_smart_home
+.PHONY : test_smart_home
+
+# fast build rule for target.
+test_smart_home/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/build
+.PHONY : test_smart_home/fast
+
+#=============================================================================
+# Target rules for targets named test_command_processor
+
+# Build rule for target.
+test_command_processor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_command_processor
+.PHONY : test_command_processor
+
+# fast build rule for target.
+test_command_processor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/build
+.PHONY : test_command_processor/fast
+
+#=============================================================================
+# Target rules for targets named test_device
+
+# Build rule for target.
+test_device: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_device
+.PHONY : test_device
+
+# fast build rule for target.
+test_device/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/build
+.PHONY : test_device/fast
+
+#=============================================================================
+# Target rules for targets named test_sensor
+
+# Build rule for target.
+test_sensor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_sensor
+.PHONY : test_sensor
+
+# fast build rule for target.
+test_sensor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/build
+.PHONY : test_sensor/fast
+
 src/devices/device.o: src/devices/device.cpp.o
 .PHONY : src/devices/device.o
 
 # target to build an object file
 src/devices/device.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/device.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/device.cpp.o
 .PHONY : src/devices/device.cpp.o
 
 src/devices/device.i: src/devices/device.cpp.i
@@ -143,6 +232,7 @@ src/devices/device.i: src/devices/device.cpp.i
 # target to preprocess a source file
 src/devices/device.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/device.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/device.cpp.i
 .PHONY : src/devices/device.cpp.i
 
 src/devices/device.s: src/devices/device.cpp.s
@@ -151,6 +241,7 @@ src/devices/device.s: src/devices/device.cpp.s
 # target to generate assembly for a file
 src/devices/device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/device.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/device.cpp.s
 .PHONY : src/devices/device.cpp.s
 
 src/devices/light.o: src/devices/light.cpp.o
@@ -159,6 +250,9 @@ src/devices/light.o: src/devices/light.cpp.o
 # target to build an object file
 src/devices/light.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/light.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/devices/light.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/devices/light.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/light.cpp.o
 .PHONY : src/devices/light.cpp.o
 
 src/devices/light.i: src/devices/light.cpp.i
@@ -167,6 +261,9 @@ src/devices/light.i: src/devices/light.cpp.i
 # target to preprocess a source file
 src/devices/light.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/light.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/devices/light.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/devices/light.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/light.cpp.i
 .PHONY : src/devices/light.cpp.i
 
 src/devices/light.s: src/devices/light.cpp.s
@@ -175,6 +272,9 @@ src/devices/light.s: src/devices/light.cpp.s
 # target to generate assembly for a file
 src/devices/light.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/light.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/devices/light.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/devices/light.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/light.cpp.s
 .PHONY : src/devices/light.cpp.s
 
 src/devices/thermostat.o: src/devices/thermostat.cpp.o
@@ -183,6 +283,7 @@ src/devices/thermostat.o: src/devices/thermostat.cpp.o
 # target to build an object file
 src/devices/thermostat.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/thermostat.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/thermostat.cpp.o
 .PHONY : src/devices/thermostat.cpp.o
 
 src/devices/thermostat.i: src/devices/thermostat.cpp.i
@@ -191,6 +292,7 @@ src/devices/thermostat.i: src/devices/thermostat.cpp.i
 # target to preprocess a source file
 src/devices/thermostat.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/thermostat.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/thermostat.cpp.i
 .PHONY : src/devices/thermostat.cpp.i
 
 src/devices/thermostat.s: src/devices/thermostat.cpp.s
@@ -199,6 +301,7 @@ src/devices/thermostat.s: src/devices/thermostat.cpp.s
 # target to generate assembly for a file
 src/devices/thermostat.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/devices/thermostat.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/src/devices/thermostat.cpp.s
 .PHONY : src/devices/thermostat.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -231,6 +334,9 @@ src/rules/condition_rule.o: src/rules/condition_rule.cpp.o
 # target to build an object file
 src/rules/condition_rule.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/condition_rule.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/rules/condition_rule.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/rules/condition_rule.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/rules/condition_rule.cpp.o
 .PHONY : src/rules/condition_rule.cpp.o
 
 src/rules/condition_rule.i: src/rules/condition_rule.cpp.i
@@ -239,6 +345,9 @@ src/rules/condition_rule.i: src/rules/condition_rule.cpp.i
 # target to preprocess a source file
 src/rules/condition_rule.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/condition_rule.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/rules/condition_rule.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/rules/condition_rule.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/rules/condition_rule.cpp.i
 .PHONY : src/rules/condition_rule.cpp.i
 
 src/rules/condition_rule.s: src/rules/condition_rule.cpp.s
@@ -247,6 +356,9 @@ src/rules/condition_rule.s: src/rules/condition_rule.cpp.s
 # target to generate assembly for a file
 src/rules/condition_rule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/condition_rule.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/rules/condition_rule.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/rules/condition_rule.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/rules/condition_rule.cpp.s
 .PHONY : src/rules/condition_rule.cpp.s
 
 src/rules/scheduled_rule.o: src/rules/scheduled_rule.cpp.o
@@ -255,6 +367,7 @@ src/rules/scheduled_rule.o: src/rules/scheduled_rule.cpp.o
 # target to build an object file
 src/rules/scheduled_rule.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/scheduled_rule.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/src/rules/scheduled_rule.cpp.o
 .PHONY : src/rules/scheduled_rule.cpp.o
 
 src/rules/scheduled_rule.i: src/rules/scheduled_rule.cpp.i
@@ -263,6 +376,7 @@ src/rules/scheduled_rule.i: src/rules/scheduled_rule.cpp.i
 # target to preprocess a source file
 src/rules/scheduled_rule.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/scheduled_rule.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/src/rules/scheduled_rule.cpp.i
 .PHONY : src/rules/scheduled_rule.cpp.i
 
 src/rules/scheduled_rule.s: src/rules/scheduled_rule.cpp.s
@@ -271,6 +385,7 @@ src/rules/scheduled_rule.s: src/rules/scheduled_rule.cpp.s
 # target to generate assembly for a file
 src/rules/scheduled_rule.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/rules/scheduled_rule.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/src/rules/scheduled_rule.cpp.s
 .PHONY : src/rules/scheduled_rule.cpp.s
 
 src/sensors/motion_sensor.o: src/sensors/motion_sensor.cpp.o
@@ -279,6 +394,10 @@ src/sensors/motion_sensor.o: src/sensors/motion_sensor.cpp.o
 # target to build an object file
 src/sensors/motion_sensor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/motion_sensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/sensors/motion_sensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/sensors/motion_sensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/sensors/motion_sensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/motion_sensor.cpp.o
 .PHONY : src/sensors/motion_sensor.cpp.o
 
 src/sensors/motion_sensor.i: src/sensors/motion_sensor.cpp.i
@@ -287,6 +406,10 @@ src/sensors/motion_sensor.i: src/sensors/motion_sensor.cpp.i
 # target to preprocess a source file
 src/sensors/motion_sensor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/motion_sensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/sensors/motion_sensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/sensors/motion_sensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/sensors/motion_sensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/motion_sensor.cpp.i
 .PHONY : src/sensors/motion_sensor.cpp.i
 
 src/sensors/motion_sensor.s: src/sensors/motion_sensor.cpp.s
@@ -295,6 +418,10 @@ src/sensors/motion_sensor.s: src/sensors/motion_sensor.cpp.s
 # target to generate assembly for a file
 src/sensors/motion_sensor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/motion_sensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/src/sensors/motion_sensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/sensors/motion_sensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/sensors/motion_sensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/motion_sensor.cpp.s
 .PHONY : src/sensors/motion_sensor.cpp.s
 
 src/sensors/temperature_sensor.o: src/sensors/temperature_sensor.cpp.o
@@ -303,6 +430,7 @@ src/sensors/temperature_sensor.o: src/sensors/temperature_sensor.cpp.o
 # target to build an object file
 src/sensors/temperature_sensor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/temperature_sensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/temperature_sensor.cpp.o
 .PHONY : src/sensors/temperature_sensor.cpp.o
 
 src/sensors/temperature_sensor.i: src/sensors/temperature_sensor.cpp.i
@@ -311,6 +439,7 @@ src/sensors/temperature_sensor.i: src/sensors/temperature_sensor.cpp.i
 # target to preprocess a source file
 src/sensors/temperature_sensor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/temperature_sensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/temperature_sensor.cpp.i
 .PHONY : src/sensors/temperature_sensor.cpp.i
 
 src/sensors/temperature_sensor.s: src/sensors/temperature_sensor.cpp.s
@@ -319,6 +448,7 @@ src/sensors/temperature_sensor.s: src/sensors/temperature_sensor.cpp.s
 # target to generate assembly for a file
 src/sensors/temperature_sensor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/sensors/temperature_sensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/src/sensors/temperature_sensor.cpp.s
 .PHONY : src/sensors/temperature_sensor.cpp.s
 
 src/system/command_processor.o: src/system/command_processor.cpp.o
@@ -327,6 +457,7 @@ src/system/command_processor.o: src/system/command_processor.cpp.o
 # target to build an object file
 src/system/command_processor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/command_processor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/command_processor.cpp.o
 .PHONY : src/system/command_processor.cpp.o
 
 src/system/command_processor.i: src/system/command_processor.cpp.i
@@ -335,6 +466,7 @@ src/system/command_processor.i: src/system/command_processor.cpp.i
 # target to preprocess a source file
 src/system/command_processor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/command_processor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/command_processor.cpp.i
 .PHONY : src/system/command_processor.cpp.i
 
 src/system/command_processor.s: src/system/command_processor.cpp.s
@@ -343,6 +475,7 @@ src/system/command_processor.s: src/system/command_processor.cpp.s
 # target to generate assembly for a file
 src/system/command_processor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/command_processor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/command_processor.cpp.s
 .PHONY : src/system/command_processor.cpp.s
 
 src/system/smart_home_system.o: src/system/smart_home_system.cpp.o
@@ -351,6 +484,8 @@ src/system/smart_home_system.o: src/system/smart_home_system.cpp.o
 # target to build an object file
 src/system/smart_home_system.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/smart_home_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/system/smart_home_system.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/smart_home_system.cpp.o
 .PHONY : src/system/smart_home_system.cpp.o
 
 src/system/smart_home_system.i: src/system/smart_home_system.cpp.i
@@ -359,6 +494,8 @@ src/system/smart_home_system.i: src/system/smart_home_system.cpp.i
 # target to preprocess a source file
 src/system/smart_home_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/smart_home_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/system/smart_home_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/smart_home_system.cpp.i
 .PHONY : src/system/smart_home_system.cpp.i
 
 src/system/smart_home_system.s: src/system/smart_home_system.cpp.s
@@ -367,7 +504,153 @@ src/system/smart_home_system.s: src/system/smart_home_system.cpp.s
 # target to generate assembly for a file
 src/system/smart_home_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/src/system/smart_home_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/src/system/smart_home_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/src/system/smart_home_system.cpp.s
 .PHONY : src/system/smart_home_system.cpp.s
+
+tests/devices/test_device.o: tests/devices/test_device.cpp.o
+.PHONY : tests/devices/test_device.o
+
+# target to build an object file
+tests/devices/test_device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/tests/devices/test_device.cpp.o
+.PHONY : tests/devices/test_device.cpp.o
+
+tests/devices/test_device.i: tests/devices/test_device.cpp.i
+.PHONY : tests/devices/test_device.i
+
+# target to preprocess a source file
+tests/devices/test_device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/tests/devices/test_device.cpp.i
+.PHONY : tests/devices/test_device.cpp.i
+
+tests/devices/test_device.s: tests/devices/test_device.cpp.s
+.PHONY : tests/devices/test_device.s
+
+# target to generate assembly for a file
+tests/devices/test_device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/tests/devices/test_device.cpp.s
+.PHONY : tests/devices/test_device.cpp.s
+
+tests/rules/test_condition_rule.o: tests/rules/test_condition_rule.cpp.o
+.PHONY : tests/rules/test_condition_rule.o
+
+# target to build an object file
+tests/rules/test_condition_rule.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/tests/rules/test_condition_rule.cpp.o
+.PHONY : tests/rules/test_condition_rule.cpp.o
+
+tests/rules/test_condition_rule.i: tests/rules/test_condition_rule.cpp.i
+.PHONY : tests/rules/test_condition_rule.i
+
+# target to preprocess a source file
+tests/rules/test_condition_rule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/tests/rules/test_condition_rule.cpp.i
+.PHONY : tests/rules/test_condition_rule.cpp.i
+
+tests/rules/test_condition_rule.s: tests/rules/test_condition_rule.cpp.s
+.PHONY : tests/rules/test_condition_rule.s
+
+# target to generate assembly for a file
+tests/rules/test_condition_rule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/tests/rules/test_condition_rule.cpp.s
+.PHONY : tests/rules/test_condition_rule.cpp.s
+
+tests/rules/test_scheduled_rule.o: tests/rules/test_scheduled_rule.cpp.o
+.PHONY : tests/rules/test_scheduled_rule.o
+
+# target to build an object file
+tests/rules/test_scheduled_rule.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/tests/rules/test_scheduled_rule.cpp.o
+.PHONY : tests/rules/test_scheduled_rule.cpp.o
+
+tests/rules/test_scheduled_rule.i: tests/rules/test_scheduled_rule.cpp.i
+.PHONY : tests/rules/test_scheduled_rule.i
+
+# target to preprocess a source file
+tests/rules/test_scheduled_rule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/tests/rules/test_scheduled_rule.cpp.i
+.PHONY : tests/rules/test_scheduled_rule.cpp.i
+
+tests/rules/test_scheduled_rule.s: tests/rules/test_scheduled_rule.cpp.s
+.PHONY : tests/rules/test_scheduled_rule.s
+
+# target to generate assembly for a file
+tests/rules/test_scheduled_rule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/tests/rules/test_scheduled_rule.cpp.s
+.PHONY : tests/rules/test_scheduled_rule.cpp.s
+
+tests/sensors/test_sensor.o: tests/sensors/test_sensor.cpp.o
+.PHONY : tests/sensors/test_sensor.o
+
+# target to build an object file
+tests/sensors/test_sensor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/tests/sensors/test_sensor.cpp.o
+.PHONY : tests/sensors/test_sensor.cpp.o
+
+tests/sensors/test_sensor.i: tests/sensors/test_sensor.cpp.i
+.PHONY : tests/sensors/test_sensor.i
+
+# target to preprocess a source file
+tests/sensors/test_sensor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/tests/sensors/test_sensor.cpp.i
+.PHONY : tests/sensors/test_sensor.cpp.i
+
+tests/sensors/test_sensor.s: tests/sensors/test_sensor.cpp.s
+.PHONY : tests/sensors/test_sensor.s
+
+# target to generate assembly for a file
+tests/sensors/test_sensor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/tests/sensors/test_sensor.cpp.s
+.PHONY : tests/sensors/test_sensor.cpp.s
+
+tests/system/test_command_processor.o: tests/system/test_command_processor.cpp.o
+.PHONY : tests/system/test_command_processor.o
+
+# target to build an object file
+tests/system/test_command_processor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/tests/system/test_command_processor.cpp.o
+.PHONY : tests/system/test_command_processor.cpp.o
+
+tests/system/test_command_processor.i: tests/system/test_command_processor.cpp.i
+.PHONY : tests/system/test_command_processor.i
+
+# target to preprocess a source file
+tests/system/test_command_processor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/tests/system/test_command_processor.cpp.i
+.PHONY : tests/system/test_command_processor.cpp.i
+
+tests/system/test_command_processor.s: tests/system/test_command_processor.cpp.s
+.PHONY : tests/system/test_command_processor.s
+
+# target to generate assembly for a file
+tests/system/test_command_processor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/tests/system/test_command_processor.cpp.s
+.PHONY : tests/system/test_command_processor.cpp.s
+
+tests/system/test_smart_home.o: tests/system/test_smart_home.cpp.o
+.PHONY : tests/system/test_smart_home.o
+
+# target to build an object file
+tests/system/test_smart_home.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/tests/system/test_smart_home.cpp.o
+.PHONY : tests/system/test_smart_home.cpp.o
+
+tests/system/test_smart_home.i: tests/system/test_smart_home.cpp.i
+.PHONY : tests/system/test_smart_home.i
+
+# target to preprocess a source file
+tests/system/test_smart_home.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/tests/system/test_smart_home.cpp.i
+.PHONY : tests/system/test_smart_home.cpp.i
+
+tests/system/test_smart_home.s: tests/system/test_smart_home.cpp.s
+.PHONY : tests/system/test_smart_home.s
+
+# target to generate assembly for a file
+tests/system/test_smart_home.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/tests/system/test_smart_home.cpp.s
+.PHONY : tests/system/test_smart_home.cpp.s
 
 # Help Target
 help:
@@ -377,7 +660,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... smarthome"
+	@echo "... test_command_processor"
+	@echo "... test_condition_rule"
+	@echo "... test_device"
+	@echo "... test_scheduled_rule"
+	@echo "... test_sensor"
+	@echo "... test_smart_home"
 	@echo "... src/devices/device.o"
 	@echo "... src/devices/device.i"
 	@echo "... src/devices/device.s"
@@ -408,6 +698,24 @@ help:
 	@echo "... src/system/smart_home_system.o"
 	@echo "... src/system/smart_home_system.i"
 	@echo "... src/system/smart_home_system.s"
+	@echo "... tests/devices/test_device.o"
+	@echo "... tests/devices/test_device.i"
+	@echo "... tests/devices/test_device.s"
+	@echo "... tests/rules/test_condition_rule.o"
+	@echo "... tests/rules/test_condition_rule.i"
+	@echo "... tests/rules/test_condition_rule.s"
+	@echo "... tests/rules/test_scheduled_rule.o"
+	@echo "... tests/rules/test_scheduled_rule.i"
+	@echo "... tests/rules/test_scheduled_rule.s"
+	@echo "... tests/sensors/test_sensor.o"
+	@echo "... tests/sensors/test_sensor.i"
+	@echo "... tests/sensors/test_sensor.s"
+	@echo "... tests/system/test_command_processor.o"
+	@echo "... tests/system/test_command_processor.i"
+	@echo "... tests/system/test_command_processor.s"
+	@echo "... tests/system/test_smart_home.o"
+	@echo "... tests/system/test_smart_home.i"
+	@echo "... tests/system/test_smart_home.s"
 .PHONY : help
 
 

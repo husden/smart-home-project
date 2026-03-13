@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_scheduled_rule.dir/tests/rules/test_scheduled_rule.cpp.o CMakeFiles/test_scheduled_rule.dir/src/rules/scheduled_rule.cpp.o -o test_scheduled_rule  /opt/homebrew/Cellar/googletest/1.17.0/lib/libgtest_main.a /opt/homebrew/Cellar/googletest/1.17.0/lib/libgtest.a -lpthread

@@ -64,10 +64,22 @@ CMAKE_BINARY_DIR = /Users/tyagunova_daria/CLionProjects/smart-home-project/build
 
 # The main recursive "all" target.
 all: CMakeFiles/smarthome.dir/all
+all: CMakeFiles/test_condition_rule.dir/all
+all: CMakeFiles/test_scheduled_rule.dir/all
+all: CMakeFiles/test_smart_home.dir/all
+all: CMakeFiles/test_command_processor.dir/all
+all: CMakeFiles/test_device.dir/all
+all: CMakeFiles/test_sensor.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/smarthome.dir/codegen
+codegen: CMakeFiles/test_condition_rule.dir/codegen
+codegen: CMakeFiles/test_scheduled_rule.dir/codegen
+codegen: CMakeFiles/test_smart_home.dir/codegen
+codegen: CMakeFiles/test_command_processor.dir/codegen
+codegen: CMakeFiles/test_device.dir/codegen
+codegen: CMakeFiles/test_sensor.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,6 +88,12 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/smarthome.dir/clean
+clean: CMakeFiles/test_condition_rule.dir/clean
+clean: CMakeFiles/test_scheduled_rule.dir/clean
+clean: CMakeFiles/test_smart_home.dir/clean
+clean: CMakeFiles/test_command_processor.dir/clean
+clean: CMakeFiles/test_device.dir/clean
+clean: CMakeFiles/test_sensor.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -109,6 +127,198 @@ CMakeFiles/smarthome.dir/codegen:
 CMakeFiles/smarthome.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smarthome.dir/build.make CMakeFiles/smarthome.dir/clean
 .PHONY : CMakeFiles/smarthome.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_condition_rule.dir
+
+# All Build rule for target.
+CMakeFiles/test_condition_rule.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=19,20,21,22 "Built target test_condition_rule"
+.PHONY : CMakeFiles/test_condition_rule.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_condition_rule.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_condition_rule.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_condition_rule.dir/rule
+
+# Convenience name for target.
+test_condition_rule: CMakeFiles/test_condition_rule.dir/rule
+.PHONY : test_condition_rule
+
+# codegen rule for target.
+CMakeFiles/test_condition_rule.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=19,20,21,22 "Finished codegen for target test_condition_rule"
+.PHONY : CMakeFiles/test_condition_rule.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_condition_rule.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_condition_rule.dir/build.make CMakeFiles/test_condition_rule.dir/clean
+.PHONY : CMakeFiles/test_condition_rule.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_scheduled_rule.dir
+
+# All Build rule for target.
+CMakeFiles/test_scheduled_rule.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=28,29,30 "Built target test_scheduled_rule"
+.PHONY : CMakeFiles/test_scheduled_rule.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_scheduled_rule.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_scheduled_rule.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_scheduled_rule.dir/rule
+
+# Convenience name for target.
+test_scheduled_rule: CMakeFiles/test_scheduled_rule.dir/rule
+.PHONY : test_scheduled_rule
+
+# codegen rule for target.
+CMakeFiles/test_scheduled_rule.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=28,29,30 "Finished codegen for target test_scheduled_rule"
+.PHONY : CMakeFiles/test_scheduled_rule.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_scheduled_rule.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_scheduled_rule.dir/build.make CMakeFiles/test_scheduled_rule.dir/clean
+.PHONY : CMakeFiles/test_scheduled_rule.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_smart_home.dir
+
+# All Build rule for target.
+CMakeFiles/test_smart_home.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=35,36,37,38,39,40 "Built target test_smart_home"
+.PHONY : CMakeFiles/test_smart_home.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_smart_home.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_smart_home.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_smart_home.dir/rule
+
+# Convenience name for target.
+test_smart_home: CMakeFiles/test_smart_home.dir/rule
+.PHONY : test_smart_home
+
+# codegen rule for target.
+CMakeFiles/test_smart_home.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=35,36,37,38,39,40 "Finished codegen for target test_smart_home"
+.PHONY : CMakeFiles/test_smart_home.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_smart_home.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_smart_home.dir/build.make CMakeFiles/test_smart_home.dir/clean
+.PHONY : CMakeFiles/test_smart_home.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_command_processor.dir
+
+# All Build rule for target.
+CMakeFiles/test_command_processor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=12,13,14,15,16,17,18 "Built target test_command_processor"
+.PHONY : CMakeFiles/test_command_processor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_command_processor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_command_processor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_command_processor.dir/rule
+
+# Convenience name for target.
+test_command_processor: CMakeFiles/test_command_processor.dir/rule
+.PHONY : test_command_processor
+
+# codegen rule for target.
+CMakeFiles/test_command_processor.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=12,13,14,15,16,17,18 "Finished codegen for target test_command_processor"
+.PHONY : CMakeFiles/test_command_processor.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_command_processor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_command_processor.dir/build.make CMakeFiles/test_command_processor.dir/clean
+.PHONY : CMakeFiles/test_command_processor.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_device.dir
+
+# All Build rule for target.
+CMakeFiles/test_device.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=23,24,25,26,27 "Built target test_device"
+.PHONY : CMakeFiles/test_device.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_device.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_device.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_device.dir/rule
+
+# Convenience name for target.
+test_device: CMakeFiles/test_device.dir/rule
+.PHONY : test_device
+
+# codegen rule for target.
+CMakeFiles/test_device.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=23,24,25,26,27 "Finished codegen for target test_device"
+.PHONY : CMakeFiles/test_device.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_device.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_device.dir/build.make CMakeFiles/test_device.dir/clean
+.PHONY : CMakeFiles/test_device.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_sensor.dir
+
+# All Build rule for target.
+CMakeFiles/test_sensor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=31,32,33,34 "Built target test_sensor"
+.PHONY : CMakeFiles/test_sensor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_sensor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_sensor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_sensor.dir/rule
+
+# Convenience name for target.
+test_sensor: CMakeFiles/test_sensor.dir/rule
+.PHONY : test_sensor
+
+# codegen rule for target.
+CMakeFiles/test_sensor.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/tyagunova_daria/CLionProjects/smart-home-project/build/CMakeFiles --progress-num=31,32,33,34 "Finished codegen for target test_sensor"
+.PHONY : CMakeFiles/test_sensor.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_sensor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_sensor.dir/build.make CMakeFiles/test_sensor.dir/clean
+.PHONY : CMakeFiles/test_sensor.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,7 +1,13 @@
-
 #include <gtest/gtest.h>
 #include "system/command_processor.hpp"
 #include "system/smart_home_system.hpp"
+#include "exceptions/exceptions.hpp"
+#include "devices/device.hpp"
+#include "rules/rule.hpp"
+#include "sensors/sensor.hpp"
+
+#include <string>
+#include <vector>
 
 TEST(CommandProcessorTest, ParseArguments) {
     SmartHomeSystem home;

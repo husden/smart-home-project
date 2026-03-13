@@ -1,0 +1,7 @@
+test_condition_rule 3 0.00159999
+test_scheduled_rule 0 0
+test_smart_home 0 0
+test_command_processor 3 0.00252714
+---
+test_scheduled_rule
+test_smart_home
